@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void DropItem(Item item) //
+    public void DropItem(Item item)
     {
         Vector2 spawnLocation = transform.position;
         Vector2 spawnOffset = Random.insideUnitCircle * 1.25f;

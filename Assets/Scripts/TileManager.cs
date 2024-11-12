@@ -8,7 +8,6 @@ public class TileManager : MonoBehaviour
     public Tilemap interactableMap;
     public Tile hiddenInteractableTile;
     public Tile plowedTile;
-    //
 
     void Start()
     {

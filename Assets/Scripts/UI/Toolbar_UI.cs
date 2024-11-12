@@ -40,7 +40,7 @@ public class Toolbar_UI : MonoBehaviour
         }
     }
 
-    private void CheckAlphaNumericKeys() //
+    private void CheckAlphaNumericKeys()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {

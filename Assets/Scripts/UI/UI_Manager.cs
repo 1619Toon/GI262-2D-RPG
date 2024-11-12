@@ -15,7 +15,7 @@ public class UI_Manager : MonoBehaviour
 
     public static bool dragSingle;
 
-    private void Awake() //
+    private void Awake()
     {
         Initialize();
     }

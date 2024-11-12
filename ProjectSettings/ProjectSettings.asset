@@ -700,10 +700,10 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 7f80d293-99d2-4312-8310-106a269ddb00
+  cloudProjectId: 32baf146-67ed-4c17-b1dd-ce3dc41671ac
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 2D-RPG 2024-11-11_18-20-37
+  projectName: 2D-RPG 2024-11-12_10-43-49
   organizationId: unity_e6adbbcd497ed2522fde
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0

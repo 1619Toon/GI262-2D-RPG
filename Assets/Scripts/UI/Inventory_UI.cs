@@ -11,7 +11,7 @@ public class Inventory_UI : MonoBehaviour
 
     private Inventory inventory;
 
-    private void Start() //
+    private void Start()
     {
         canvas = FindObjectOfType<Canvas>();
         inventory = GameManager.instance.player.inventoryManager.GetInventoryByName(inventoryName);

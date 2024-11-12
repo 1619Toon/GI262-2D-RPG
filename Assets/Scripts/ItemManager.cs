@@ -24,7 +24,7 @@ public class ItemManager : MonoBehaviour
         }
     }
 
-    public Item GetItemByName(string key) //
+    public Item GetItemByName(string key)
     {
         if (collectableItemsDict.ContainsKey(key))
         {

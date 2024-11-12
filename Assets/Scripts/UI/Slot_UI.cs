@@ -13,7 +13,7 @@ public class Slot_UI : MonoBehaviour
 
     public Inventory inventory;
 
-    public void SetItem(Inventory.Slot slot) //
+    public void SetItem(Inventory.Slot slot)
     {
         itemIcon.sprite = slot.icon;
         itemIcon.color = new Color(1, 1, 1, 1);

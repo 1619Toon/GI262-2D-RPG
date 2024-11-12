@@ -5,7 +5,6 @@ using UnityEngine;
 [System.Serializable]
 public class Inventory
 {
-    //
     [System.Serializable]
     public class Slot
     {

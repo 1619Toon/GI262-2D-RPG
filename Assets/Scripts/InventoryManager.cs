@@ -33,8 +33,6 @@ public class InventoryManager : MonoBehaviour
 
         return null;
     }
-    //
-
 
     public void Add(string inventoryName, Item item)
     {

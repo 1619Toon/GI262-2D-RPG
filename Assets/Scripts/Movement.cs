@@ -10,7 +10,7 @@ public class Movement : MonoBehaviour
 
     private Vector3 direction;
 
-    private void Update() //
+    private void Update()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
