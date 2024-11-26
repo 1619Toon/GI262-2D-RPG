@@ -11,7 +11,6 @@ public class Inventory
         public string itemName;
         public int count;
         public int maxAllowed;
-
         public Sprite icon;
 
         public Slot()
@@ -29,7 +28,6 @@ public class Inventory
                 {
                     return true;
                 }
-
                 return false;
             }
         }
@@ -40,7 +38,6 @@ public class Inventory
             {
                 return true;
             }
-
             return false;
         }
 
@@ -147,5 +144,32 @@ public class Inventory
             selectedSlot = slots[index];
         }
     }
-}
 
+    // เพิ่มเมธอด HasItem เพื่อตรวจสอบว่าใน Inventory มีไอเทมที่ชื่อเหมือนกับ itemName หรือไม่
+    public bool HasItem(string itemName)
+    {
+        foreach (Slot slot in slots)
+        {
+            if (slot.itemName == itemName && slot.count > 0)
+            {
+                return true;  // ถ้ามีไอเทมที่มีชื่อเหมือนกันและจำนวนมากกว่า 0
+            }
+        }
+        return false;  // ถ้าไม่พบไอเทม
+    }
+
+    public Item GetItemByName(string itemName)
+    {
+        foreach (Slot slot in slots)
+        {
+            if (slot.itemName == itemName && slot.count > 0)
+            {
+                // สร้างไอเทมจากข้อมูลใน Inventory
+                Item item = new GameObject(itemName).AddComponent<Item>();
+                item.data = Resources.Load<ItemData>("Path/To/ItemData");  // โหลดข้อมูลจาก Resource (ต้องมี ItemData ที่เก็บข้อมูล)
+                return item;
+            }
+        }
+        return null;  // ถ้าไม่พบไอเทมที่ตรงกับชื่อ
+    }
+}
