@@ -70,6 +70,7 @@ public class Inventory
             }
         }
     }
+    
 
     public List<Slot> slots = new List<Slot>();
     public Slot selectedSlot = null;
@@ -119,6 +120,23 @@ public class Inventory
         }
     }
 
+    public void RemoveItem(string itemName, int count)
+    {
+        foreach (Slot slot in slots)
+        {
+            if (slot.itemName == itemName && slot.count >= count)
+            {
+                for (int i = 0; i < count; i++)
+                {
+                    slot.RemoveItem();
+                }
+                return;  
+            }
+        }
+
+        Debug.LogWarning($"Item '{itemName}' not found or not enough items to remove.");
+    }
+
     public void MoveSlot(int fromIndex, int toIndex, Inventory toInventory, int numToMove = 1)
     {
         if (slots != null && slots.Count > 0)
@@ -145,17 +163,16 @@ public class Inventory
         }
     }
 
-    // เพิ่มเมธอด HasItem เพื่อตรวจสอบว่าใน Inventory มีไอเทมที่ชื่อเหมือนกับ itemName หรือไม่
     public bool HasItem(string itemName)
     {
         foreach (Slot slot in slots)
         {
             if (slot.itemName == itemName && slot.count > 0)
             {
-                return true;  // ถ้ามีไอเทมที่มีชื่อเหมือนกันและจำนวนมากกว่า 0
+                return true;
             }
         }
-        return false;  // ถ้าไม่พบไอเทม
+        return false;
     }
 
     public Item GetItemByName(string itemName)
@@ -164,12 +181,11 @@ public class Inventory
         {
             if (slot.itemName == itemName && slot.count > 0)
             {
-                // สร้างไอเทมจากข้อมูลใน Inventory
                 Item item = new GameObject(itemName).AddComponent<Item>();
-                item.data = Resources.Load<ItemData>("Path/To/ItemData");  // โหลดข้อมูลจาก Resource (ต้องมี ItemData ที่เก็บข้อมูล)
+                item.data = Resources.Load<ItemData>("Path/To/ItemData");
                 return item;
             }
         }
-        return null;  // ถ้าไม่พบไอเทมที่ตรงกับชื่อ
+        return null;
     }
 }
